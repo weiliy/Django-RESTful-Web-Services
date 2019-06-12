@@ -1,0 +1,12 @@
+# FROM registry.xpaas.lenovo.com/library/python3-web-base:v8
+FROM python:3
+
+
+RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list
+RUN sed -i 's/security.debian.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list
+RUN apt update || echo 'skip'
+RUN apt install -y libpq-dev
+RUN apt install -y python3-venv
+
+RUN pip install --upgrade pip
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
