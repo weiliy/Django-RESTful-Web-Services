@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Django REST framework
-    'rest_framwork',
+    'rest_framework',
     # Toys appliation
     'toys.apps.ToysConfig',
 ]
