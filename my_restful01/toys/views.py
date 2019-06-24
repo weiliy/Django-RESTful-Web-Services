@@ -34,7 +34,7 @@ def toy_list(request):
 def toy_detail(request, pk):
     try:
         toy = Toy.objects.get(pk=pk)
-    except Toy.DesNotExist:
+    except Toy.DoesNotExist:
         return HttpResponse(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
