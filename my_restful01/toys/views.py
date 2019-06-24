@@ -50,6 +50,6 @@ def toy_detail(request, pk):
         return JSONResponse(toy_serializer.errors,
                             status=status.HTTP_400_BAD_REQUEST)
 
-    elif reqeust.method == 'DELETE':
+    elif request.method == 'DELETE':
         toy.delete()
         return HttpResponse(status=status.HTTP_204_NO_CONTENT)
