@@ -42,7 +42,7 @@ def toy_detail(request, pk):
         return JSONResponse(toy_serializer.data)
 
     elif request.method == 'PUT':
-        toy_data = JSONParser().parse(reqeust)
+        toy_data = JSONParser().parse(request)
         toy_serializer = ToySerializer(toy, data=toy_data)
         if toy_serializer.is_valid():
             toy_serializer.save()
