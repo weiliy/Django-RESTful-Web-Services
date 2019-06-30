@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from drones.models import DroneCategroy
+from drones.models import DroneCategory
 from drones.models import Drone
 from drones.models import Pilot
 from drones.models import Competition
@@ -21,7 +21,7 @@ class DroneCategorySerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'drones')
 
-class DroneSerializer(serializer.HyperlinkedModelSerializer):
+class DroneSerializer(serializers.HyperlinkedModelSerializer):
     # Dispaly the category name
     drone_category = serializers.SlugRelatedField(queryset=DroneCategory.objects.all(), slug_field='name')
 
@@ -45,7 +45,7 @@ class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
             'url',
             'pk',
             'distance_in_feet',
-            'distance_achivement_date',
+            'distance_achievement_date',
             'drone')
 
 class PilotSerializer(serializers.HyperlinkedModelSerializer):
@@ -79,6 +79,6 @@ class PilotCompetitionSerializer(serializers.ModelSerializer):
             'url',
             'pk',
             'distance_in_feet',
-            'distance_achievment_date',
+            'distance_achievement_date',
             'pilot',
             'drone')

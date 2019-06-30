@@ -57,7 +57,7 @@ class Competition(models.Model):
         Drone,
         on_delete=models.CASCADE)
     distance_in_feet = models.IntegerField()
-    distance_archievement_date = models.DateTimeField()
+    distance_achievement_date = models.DateTimeField()
 
     class Meta:
         # Order by distance in descending order
