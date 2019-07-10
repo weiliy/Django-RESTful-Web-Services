@@ -4,7 +4,7 @@ APP_NAME				:= $(shell  pwd | sed -E 's/.*\///')
 BASE_DOCKERFILE := Dockerfile.base
 DOCKER_REG			:= me.shared:5000
 BASE_IMAGE			:= $(shell echo $(DOCKER_REG)/$(APP_NAME) | tr A-Z a-z)
-PORT						:= 8001
+PORT						?= 8000
 
 all: base setup dev
 
